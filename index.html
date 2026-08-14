@@ -1,106 +1,315 @@
 <!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Privacybeleid - TellenMaar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Privacybeleid van de Android-app TellenMaar.">
+  <title>Privacybeleid – TellenMaar</title>
   <style>
-    :root{
-      --bg:#f7f8fa;
-      --card:#ffffff;
-      --text:#1b1f24;
-      --muted:#5b6470;
-      --accent:#0b6bcb;
-      --border:#e4e7eb;
+    :root {
+      color-scheme: light dark;
+      --background: #f4f7f2;
+      --surface: #ffffff;
+      --text: #172019;
+      --muted: #58635b;
+      --accent: #276c3b;
+      --border: #dce5dc;
     }
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
-    .wrap{max-width:860px;margin:40px auto;padding:0 16px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px}
-    h1{margin:0 0 8px;font-size:30px;line-height:1.2}
-    .meta{margin:0 0 24px;color:var(--muted)}
-    h2{margin:28px 0 8px;font-size:20px}
-    ul{margin:8px 0 0 22px}
-    code{background:#eef3f8;padding:2px 6px;border-radius:6px}
-    a{color:var(--accent)}
-    .footer{margin-top:24px;color:var(--muted);font-size:14px}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    main {
+      width: min(900px, calc(100% - 32px));
+      margin: 40px auto;
+      padding: 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    h1, h2 { line-height: 1.25; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.9rem, 5vw, 2.5rem); }
+    h2 { margin: 32px 0 8px; font-size: 1.25rem; }
+    p, ul { margin-top: 8px; }
+    li + li { margin-top: 7px; }
+    a { color: var(--accent); }
+    .updated, footer { color: var(--muted); }
+    .notice {
+      margin: 24px 0;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: color-mix(in srgb, var(--accent) 9%, var(--surface));
+    }
+    @media (max-width: 600px) {
+      main { width: 100%; margin: 0; padding: 24px 18px; border: 0; border-radius: 0; }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #111512;
+        --surface: #19201b;
+        --text: #edf4ee;
+        --muted: #b5c0b7;
+        --accent: #8bd49f;
+        --border: #354039;
+      }
+    }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <article class="card">
-      <h1>Privacybeleid TellenMaar</h1>
-      <p class="meta">Laatst bijgewerkt: 24 april 2026</p>
+  <main>
+    <article>
+      <h1>Privacybeleid van TellenMaar</h1>
+      <p class="updated">Laatst bijgewerkt: 14 augustus 2026</p>
 
       <p>
-        TellenMaar respecteert je privacy. In dit beleid leggen we uit welke gegevens de app gebruikt en waarom.
+        TellenMaar is een app voor het registreren, beheren en exporteren van
+        natuurwaarnemingen. Dit beleid beschrijft welke gegevens de app gebruikt,
+        waar ze worden bewaard en wanneer ze naar een externe dienst worden gestuurd.
       </p>
 
-      <h2>1. Wie is verantwoordelijk</h2>
+      <div class="notice">
+        De meeste gegevens blijven lokaal op je toestel. Alleen wanneer je een online
+        functie gebruikt, zoals een kaartdienst, online spraakherkenning,
+        iNaturalist-beeldherkenning of upload naar iNaturalist, worden de daarvoor
+        benodigde gegevens naar die dienst gestuurd.
+      </div>
+
+      <h2>1. Verantwoordelijke en contact</h2>
       <p>
-        TellenMaar is de verwerkingsverantwoordelijke voor gegevens die via de app worden verwerkt.<br>
-        Contact: <a href="mailto:timonboumon37@gmail.com">timonboumon37@gmail.com</a>
+        De ontwikkelaar van TellenMaar is verantwoordelijk voor de verwerking binnen
+        de app. Voor privacyvragen kun je contact opnemen via
+        <a href="mailto:timonboumon37@gmail.com">timonboumon37@gmail.com</a>.
       </p>
 
-      <h2>2. Welke gegevens gebruikt de app</h2>
+      <h2>2. Gegevens die TellenMaar gebruikt</h2>
       <ul>
-        <li>Waarnemingsgegevens die jij invoert (soort, aantal, notities, datum/tijd, velden)</li>
-        <li>Locatiegegevens (GPS: latitude/longitude, nauwkeurigheid)</li>
-        <li>Microfoongebruik voor spraakinvoer (spraakcommando's/spraak naar tekst)</li>
-        <li>Technische app-informatie (voor werking en foutopsporing, indien van toepassing)</li>
+        <li>
+          <strong>Waarnemings- en projectgegevens:</strong> onder meer soort, aantal,
+          datum en tijd, notities, gebruikte invoervelden, projecten, tellingen en
+          transecten.
+        </li>
+        <li>
+          <strong>Locatiegegevens:</strong> een benaderende of precieze GPS-locatie,
+          hoogstens voor de functies waarvoor je locatie gebruikt, met inbegrip van
+          coördinaten en positienauwkeurigheid.
+        </li>
+        <li>
+          <strong>Foto's:</strong> foto's die je met de camera maakt of zelf uit de
+          galerij kiest, en een door jou bijgesneden versie daarvan.
+        </li>
+        <li>
+          <strong>Spraak:</strong> audio die je bewust inspreekt om waarnemingen via
+          spraak naar tekst in te voeren.
+        </li>
+        <li>
+          <strong>iNaturalist-accountgegevens:</strong> wanneer je iNaturalist koppelt,
+          gebruikt de app je iNaturalist-gebruikers-ID, gebruikersnaam, eventuele
+          profielnaam en toegangs- of API-token. TellenMaar ontvangt je
+          iNaturalist-wachtwoord niet.
+        </li>
+        <li>
+          <strong>Appinstellingen:</strong> bijvoorbeeld camera-, flits-, licht- en
+          zoomvoorkeuren, uploadvoorkeuren en andere instellingen die nodig zijn om je
+          keuzes te onthouden.
+        </li>
       </ul>
 
-      <h2>3. Waarom deze gegevens worden gebruikt</h2>
+      <h2>3. Doeleinden</h2>
+      <p>De gegevens worden alleen gebruikt om:</p>
       <ul>
-        <li>Vastleggen en beheren van waarnemingen</li>
-        <li>Plaatsen van waarnemingen op kaart en locatievalidatie</li>
-        <li>Opvragen van kaartlagen, kaarttiles en plaatsnamen/toponiemen voor kaart- en transectfuncties</li>
-        <li>Sneller invoeren via spraakinvoer</li>
-        <li>Verbeteren van stabiliteit en werking van de app</li>
+        <li>waarnemingen, tellingen, projecten en transecten vast te leggen en te beheren;</li>
+        <li>je positie te bepalen, routes vast te leggen en gegevens op kaarten te tonen;</li>
+        <li>foto's te maken, bij te snijden, lokaal te bewaren en aan waarnemingen te koppelen;</li>
+        <li>soortsuggesties via iNaturalist Computer Vision op te vragen;</li>
+        <li>je iNaturalist-account te koppelen en, als je dat kiest, waarnemingen te uploaden;</li>
+        <li>spraak naar tekst om te zetten;</li>
+        <li>bestanden te importeren, exporteren of delen wanneer jij dat vraagt;</li>
+        <li>je gekozen app- en cameravoorkeuren lokaal te bewaren.</li>
       </ul>
 
-      <h2>4. Toestemmingen</h2>
-      <p>De app vraagt alleen toestemmingen die nodig zijn voor functionaliteit:</p>
+      <h2>4. Lokale opslag en foto's in de galerij</h2>
       <ul>
-        <li><code>RECORD_AUDIO</code>: voor spraakinvoer</li>
-        <li><code>ACCESS_FINE_LOCATION</code> / <code>ACCESS_COARSE_LOCATION</code>: voor GPS-locatie</li>
+        <li>
+          Waarnemingen en instellingen worden hoofdzakelijk in de interne opslag van
+          de app bewaard.
+        </li>
+        <li>
+          Een bijgesneden foto die aan een opgeslagen waarneming is gekoppeld, wordt
+          in de interne appopslag bewaard.
+        </li>
+        <li>
+          Een met de TellenMaar-camera gemaakte originele foto wordt ook lokaal in de
+          galerijmap <strong>Pictures/TellenMaar</strong> bewaard. Deze galerijkopie kan
+          blijven bestaan nadat je een waarneming verwijdert, een invoer annuleert of
+          de app verwijdert. Je kunt haar zelf met je galerij- of bestandsapp wissen.
+        </li>
+        <li>
+          Toegangs- en API-tokens voor iNaturalist worden in de beveiligde opslag van
+          het besturingssysteem bewaard. Ze worden verwijderd wanneer je de koppeling
+          in de app verbreekt; tijdelijke tokens verlopen daarnaast automatisch.
+        </li>
+      </ul>
+
+      <h2>5. iNaturalist-beeldherkenning</h2>
+      <p>
+        Wanneer je uitdrukkelijk om fotoherkenning vraagt, stuurt TellenMaar de
+        bijgesneden foto naar de iNaturalist API. Indien beschikbaar worden ook de
+        coördinaten en observatiedatum meegestuurd, omdat deze de soortsuggesties
+        kunnen verbeteren. Een iNaturalist-toegangstoken wordt gebruikt om het verzoek
+        te authenticeren. iNaturalist stuurt mogelijke taxa en herkenningsscores terug.
+      </p>
+      <p>
+        De foto wordt door deze herkenningshandeling niet automatisch als openbare
+        waarneming geplaatst. De gegevens worden wel door iNaturalist verwerkt om de
+        gevraagde herkenning te leveren. Behandel suggesties altijd als voorstellen,
+        niet als een zekere determinatie.
+      </p>
+
+      <h2>6. Koppeling en upload naar iNaturalist</h2>
+      <p>
+        Je kunt TellenMaar via OAuth aan een bestaand iNaturalist-account koppelen of,
+        zolang deze koppeling nog niet beschikbaar is, zelf een tijdelijk API-token
+        invoeren. OAuth-aanmelding gebeurt in de website of het aanmeldvenster van
+        iNaturalist; TellenMaar ziet of bewaart je wachtwoord niet.
+      </p>
+      <p>
+        Upload naar iNaturalist is optioneel. Je kunt automatisch uploaden uitschakelen
+        of instellen dat alleen waarnemingen met een foto worden geüpload. Bij een
+        upload kunnen de volgende gegevens naar iNaturalist gaan:
+      </p>
+      <ul>
+        <li>soort of taxon, aantal, datum, tijd en notities;</li>
+        <li>coördinaten, positienauwkeurigheid en de gekozen locatieprivacy;</li>
+        <li>de gekoppelde foto;</li>
+        <li>technische identificatoren, zoals de UUID van de waarneming en foto;</li>
+        <li>de aanduiding dat een identificatie uit beeldherkenning kwam.</li>
       </ul>
       <p>
-        Je kunt deze toestemmingen altijd weigeren of intrekken via Android-instellingen.
-        Sommige functies werken dan beperkt.
+        Na upload geldt het privacybeleid van iNaturalist. Een waarneming lokaal uit
+        TellenMaar verwijderen of uitloggen wist de reeds geüploade waarneming of je
+        iNaturalist-account niet. Beheer of verwijder die gegevens via iNaturalist.
+        Let erop dat iNaturalist gegevens buiten de Europese Economische Ruimte kan
+        verwerken.
       </p>
 
-      <h2>5. Opslag en delen</h2>
-      <ul>
-        <li>Waarnemingsgegevens worden in principe lokaal op je toestel opgeslagen.</li>
-        <li>Gegevens worden niet verkocht.</li>
-        <li>Gegevens worden niet met derden gedeeld, behalve als jij zelf exporteert/deelt of als dit technisch nodig is voor een door jou gebruikte functie.</li>
-        <li>Voor online kaartweergave en luchtfoto's kan de app kaartverzoeken sturen naar externe kaartdiensten.</li>
-        <li>Voor het voorstellen van plaatsnamen bij transecten kan de app een coordinaat of middelpunt van een getekende zone opvragen bij een externe reverse-geocodingdienst, momenteel Nominatim op basis van OpenStreetMap-data.</li>
-        <li>Deze externe diensten verwerken verzoeken volgens hun eigen voorwaarden en privacybeleid.</li>
-      </ul>
-
-      <h2>6. Bewaartermijn</h2>
-      <p>Gegevens blijven bewaard zolang jij ze in de app bewaart. Je kunt gegevens zelf verwijderen.</p>
-
-      <h2>7. Beveiliging</h2>
-      <p>We nemen redelijke technische maatregelen om gegevens te beschermen tegen verlies of misbruik.</p>
-
-      <h2>8. Rechten van gebruikers</h2>
-      <ul>
-        <li>Je kunt je gegevens inkijken in de app</li>
-        <li>Je kunt gegevens aanpassen of verwijderen</li>
-        <li>Je kunt toestemmingen intrekken via je toestelinstellingen</li>
-      </ul>
-
-      <h2>9. Kinderen</h2>
-      <p>De app is niet specifiek gericht op kinderen onder 13 jaar.</p>
-
-      <h2>10. Wijzigingen</h2>
-      <p>Dit privacybeleid kan worden aangepast. De meest recente versie staat op deze pagina.</p>
-
-      <p class="footer">
-        TellenMaar Privacybeleid
+      <h2>7. Kaarten en plaatsnamen</h2>
+      <p>
+        Bij online kaarten vraagt de app kaarttegels of luchtfoto's op bij de gekozen
+        aanbieder, waaronder OpenStreetMap, MapTiler, PDOK, Digitaal Vlaanderen, SPW
+        Wallonie of CARTO. Zo'n verzoek bevat technisch noodzakelijk je IP-adres en de
+        kaartuitsnede die je bekijkt. Voor plaatsnamen en toponiemen kan TellenMaar een
+        coördinaat naar Nominatim van OpenStreetMap sturen. Offline kaartbestanden
+        worden niet voor kaartweergave naar deze diensten geüpload.
       </p>
+
+      <h2>8. Spraakinvoer</h2>
+      <p>
+        De microfoon wordt alleen gebruikt wanneer je de spraakinvoer activeert. De
+        huidige online spraakfunctie gebruikt de spraakherkenningsdienst die op je
+        toestel beschikbaar is. Afhankelijk van je toestel, gekozen aanbieder en
+        systeeminstellingen kan de audio op het toestel of op servers van die
+        aanbieder worden verwerkt. TellenMaar bewaart zelf geen geluidsopname; de
+        herkende tekst kan wel onderdeel worden van een lokaal opgeslagen waarneming.
+      </p>
+
+      <h2>9. Android-toestemmingen</h2>
+      <ul>
+        <li><strong>Camera:</strong> foto's voor waarnemingen en herkenning maken.</li>
+        <li><strong>Locatie:</strong> GPS-posities, routes, kaarten en locatie bij waarnemingen.</li>
+        <li><strong>Microfoon:</strong> spraakinvoer.</li>
+        <li>
+          <strong>Foto-/opslagtoegang:</strong> een foto kiezen of een gemaakte foto
+          lokaal opslaan; op oudere Android-versies kan hiervoor opslagtoestemming
+          nodig zijn.
+        </li>
+        <li><strong>Internet:</strong> online kaarten, spraakdiensten en iNaturalist.</li>
+        <li>
+          <strong>Meldingen en voorgrondservice:</strong> actieve locatie- of
+          routefuncties zichtbaar en betrouwbaar laten werken.
+        </li>
+        <li><strong>Trillen:</strong> optionele haptische feedback.</li>
+      </ul>
+      <p>
+        Je kunt toestemmingen weigeren of later intrekken via de Android-instellingen.
+        De bijbehorende functies kunnen dan niet of slechts gedeeltelijk werken.
+      </p>
+
+      <h2>10. Delen, verkoop en reclame</h2>
+      <p>
+        TellenMaar verkoopt geen persoonsgegevens, bevat geen advertenties en gebruikt
+        de beschreven gegevens niet voor advertentieprofilering. Gegevens worden alleen
+        met een externe dienst gedeeld wanneer dat nodig is voor een functie die je
+        gebruikt, of wanneer je zelf een export- of deelhandeling start.
+      </p>
+
+      <h2 id="gegevens-verwijderen">11. Bewaartermijnen en verwijderen</h2>
+      <ul>
+        <li>Lokale gegevens blijven bewaard totdat je ze in de app verwijdert of de appgegevens wist.</li>
+        <li>Galerijfoto's moet je afzonderlijk via je toestel verwijderen.</li>
+        <li>Een iNaturalist-koppeling kun je in de app verbreken; daarbij worden lokaal bewaarde tokens verwijderd.</li>
+        <li>Gegevens die al naar iNaturalist of een andere externe dienst zijn gestuurd, vallen onder de bewaartermijnen en verwijdermogelijkheden van die dienst.</li>
+      </ul>
+      <p>
+        TellenMaar maakt zelf geen afzonderlijk cloudaccount aan. Een gekoppeld
+        iNaturalist-account is een account van iNaturalist. Het verwijderen daarvan
+        verloopt via iNaturalist.
+      </p>
+      <p>
+        Heb je hulp nodig bij het verwijderen van gegevens waarvoor de ontwikkelaar
+        van TellenMaar verantwoordelijk is, stuur dan een verzoek naar
+        <a href="mailto:timonboumon37@gmail.com?subject=Verzoek%20verwijdering%20TellenMaar-gegevens">timonboumon37@gmail.com</a>.
+      </p>
+
+      <h2>12. Beveiliging</h2>
+      <p>
+        Netwerkverkeer naar de genoemde diensten verloopt via HTTPS. Gevoelige
+        iNaturalist-tokens worden in beveiligde toestelopslag geplaatst. Geen enkele
+        opslag- of overdrachtsmethode is echter volledig zonder risico.
+      </p>
+
+      <h2>13. Rechtsgrond en jouw keuzes</h2>
+      <p>
+        Optionele toegang tot camera, microfoon en locatie en het versturen naar
+        iNaturalist gebeuren op jouw verzoek of met jouw toestemming. Je kunt
+        toestemmingen, automatische upload en accountkoppeling wijzigen of intrekken.
+        Waar de Algemene Verordening Gegevensbescherming van toepassing is, kun je
+        vragen om inzage, verbetering of verwijdering van gegevens waarvoor de
+        ontwikkelaar verantwoordelijk is, of bezwaar maken tegen een verwerking.
+        Neem daarvoor contact op via het hierboven vermelde e-mailadres.
+      </p>
+
+      <h2>14. Externe diensten</h2>
+      <p>De externe diensten verwerken verzoeken volgens hun eigen voorwaarden en beleid:</p>
+      <ul>
+        <li><a href="https://www.inaturalist.org/pages/privacy">Privacybeleid van iNaturalist</a></li>
+        <li><a href="https://www.inaturalist.org/pages/terms">Gebruiksvoorwaarden van iNaturalist</a></li>
+        <li><a href="https://osmfoundation.org/wiki/Privacy_Policy">Privacybeleid van de OpenStreetMap Foundation</a></li>
+        <li><a href="https://operations.osmfoundation.org/policies/nominatim/">Gebruiksbeleid van Nominatim</a></li>
+      </ul>
+
+      <h2>15. Kinderen</h2>
+      <p>
+        TellenMaar is niet specifiek ontworpen voor kinderen. Ouders of voogden wordt
+        gevraagd toezicht te houden op het gebruik van locatie, camera, spraak en
+        externe accounts door minderjarigen.
+      </p>
+
+      <h2>16. Wijzigingen</h2>
+      <p>
+        Dit beleid kan worden aangepast wanneer functies of wettelijke vereisten
+        wijzigen. De datum bovenaan geeft de meest recente versie aan.
+      </p>
+
+      <footer>
+        <p>© 2026 TellenMaar</p>
+      </footer>
     </article>
   </main>
 </body>
